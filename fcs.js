@@ -1,6 +1,5 @@
 (function(){
 	window.addEventListener('load', function(){
-		console.log("setTimeout");
 		setTimeout(function() {
 			var queryString = window.location.search;
 			var urlParams = new URLSearchParams(queryString);
