@@ -6,6 +6,19 @@
 			var language = urlParams.get('prefill_language');
 			var country = urlParams.get('prefill_country').toUpperCase();
 
+			// Mapping für spezielle Sprachcodes
+		        var languageMapping = {
+		            "ko": "kr",
+		            "cs": "cz",
+		            "zh": "cn"
+		            // Füge hier weitere Mapping-Paare hinzu, falls erforderlich
+		        };
+		
+		        // Überprüfen und ggf. den Sprachcode anpassen
+		        if(languageMapping.hasOwnProperty(language)) {
+		        	language = languageMapping[language];
+			}
+
 			// Language Select
 			languageSelect = document.querySelectorAll("[data-type='language-selector']")[0].children[1].children[0];
 			languageSelect.value = language;
