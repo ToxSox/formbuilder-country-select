@@ -36,9 +36,10 @@
 	});
 
 	const handleIframeState = (event) => {
-	    const target = event.target;
-	    if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT")) {
-	      window.parent.postMessage({ type: "form-dirty", value: true }, "*");
-	    }
+		const target = event.target;
+		if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT")) {
+			window.parent.postMessage({ type: "form-dirty", value: true }, "*");
+			console.log("test");
+		}
 	  }
 })();
