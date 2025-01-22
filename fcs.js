@@ -29,6 +29,16 @@
 			loader.engine.document.getElementById(112552034).setValue(({"value": iso[country]}));
 
 			loader.engine.document.getElementById(116352016).setValue(({"value": language}));
+
+			document.addEventListener("input", handleIframeState);
+  			document.addEventListener("change", handleIframeState);
 		}, 1000);
 	});
+
+	const handleIframeState = (event) => {
+	    const target = event.target;
+	    if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT")) {
+	      window.parent.postMessage({ type: "form-dirty", value: true }, "*");
+	    }
+	  }
 })();
