@@ -32,6 +32,12 @@
 
 			document.addEventListener("input", handleIframeState);
   			document.addEventListener("change", handleIframeState);
+
+			const form = document.querySelector("form");
+			if (form) {
+			  form.addEventListener("submit", handleFormSubmit);
+			}
+
 		}, 1000);
 	});
 
@@ -41,4 +47,8 @@
 			window.parent.postMessage({ type: "form-dirty", value: true }, "*");
 		}
 	  }
+	const handleFormSubmit = (event) => {
+	  window.parent.postMessage({ type: "form-dirty", value: false }, "*");
+	};
+
 })();
