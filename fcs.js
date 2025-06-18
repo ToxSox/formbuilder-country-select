@@ -49,6 +49,7 @@
 	  };
 
 	if (window.location.pathname === "/thank-you-6643019.html") {
+		console.log("clean dirty");
 		window.parent.postMessage({ type: "form-dirty", value: false }, "*");
 	}
 })();
