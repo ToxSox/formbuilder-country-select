@@ -46,9 +46,9 @@
 		if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT")) {
 			window.parent.postMessage({ type: "form-dirty", value: true }, "*");
 		}
-	  }
-	const handleFormSubmit = (event) => {
-	  window.parent.postMessage({ type: "form-dirty", value: false }, "*");
-	};
+	  };
 
+	if (window.location.pathname === "/thank-you-6643019.html") {
+		window.parent.postMessage({ type: "form-dirty", value: false }, "*");
+	}
 })();
